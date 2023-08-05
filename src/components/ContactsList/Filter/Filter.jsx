@@ -24,8 +24,3 @@ export const Filter = () => {
     );
 };
 
-// const [contactsFromPhonebook, setContactsFromPhonebook] = useState('');
-// console.log(event.currentTarget.value)
-// setContactsFromPhonebook(event.currentTarget.value);
-// searchNameInPhonebook(event.currentTarget.value);
-// value={contactsFromPhonebook}

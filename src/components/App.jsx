@@ -1,14 +1,19 @@
 import { Phonebook } from './Phonebook/Phonebook';
 import { ContactsList } from './ContactsList/ContactsList';
-// import { getContactsFromLocalStorage } from 'utils/getContactsFromLocalStorage';
-// import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { fetchContacts } from 'redux/operations';
+import { useEffect } from 'react';
+
 
 export const App = () => {
 
-  // useEffect(
-  //   () => localStorage.setItem('contacts', JSON.stringify(contacts)),
-  //   [contacts]
-  // );
+  const dispatch = useDispatch();
+
+  useEffect(
+    () => {
+      dispatch(fetchContacts())
+    }, [dispatch]
+  );
 
   return (
     <div>

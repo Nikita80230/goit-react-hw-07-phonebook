@@ -9,7 +9,9 @@ export const ContactsList = () => {
         return state.contacts;
     });
 
-    const filteredContacts = contacts.filter(({ name }) =>
+
+
+    const filteredContacts = contacts.items.filter(({ name }) =>
         name.toLowerCase().includes(filter.toLowerCase())
     );
     return (

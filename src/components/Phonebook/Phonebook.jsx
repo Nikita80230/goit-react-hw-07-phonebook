@@ -1,7 +1,6 @@
-import { nanoid } from 'nanoid';
+import { addContactsToBackend } from 'redux/operations';
 import css from './Phonebook.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { addNewContact } from 'redux/reducers/contactsReducer';
 
 export const Phonebook = () => {
   const dispatch = useDispatch();
@@ -15,15 +14,13 @@ export const Phonebook = () => {
     const name = event.target.elements.name.value;
     const number = event.target.elements.number.value;
 
-
-    if (contacts.some(contact => contact.name === name)) {
+    if (contacts.items.some(item => item.name === name)) {
       alert("what are you doing? This contact has been already added!!!!")
     } else {
       dispatch(
-        addNewContact({
+        addContactsToBackend({
           name,
           number,
-          id: nanoid()
         })
       )
     }
