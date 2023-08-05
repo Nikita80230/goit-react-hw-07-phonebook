@@ -1,16 +1,21 @@
+import { Phonebook } from './Phonebook/Phonebook';
+import { ContactsList } from './ContactsList/ContactsList';
+// import { getContactsFromLocalStorage } from 'utils/getContactsFromLocalStorage';
+// import { useSelector } from 'react-redux';
+
 export const App = () => {
+
+  // useEffect(
+  //   () => localStorage.setItem('contacts', JSON.stringify(contacts)),
+  //   [contacts]
+  // );
+
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
+    <div>
+
+      <Phonebook />
+      <ContactsList />
+
     </div>
   );
 };
