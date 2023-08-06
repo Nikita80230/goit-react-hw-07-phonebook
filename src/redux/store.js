@@ -7,35 +7,35 @@
 
 import { contactListReducer } from './reducers/contactsReducer.js';
 import { configureStore } from '@reduxjs/toolkit';
-import {
-  persistStore,
-  persistReducer,
-  FLUSH,
-  REHYDRATE,
-  PAUSE,
-  PERSIST,
-  PURGE,
-  REGISTER,
-} from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
+// import {
+//   // persistStore,
+//   persistReducer,
+//   FLUSH,
+//   REHYDRATE,
+//   PAUSE,
+//   PERSIST,
+//   PURGE,
+//   REGISTER,
+// } from 'redux-persist';
+// import storage from 'redux-persist/lib/storage';
 
-const contactsListPersistConfig = {
-  key: 'contactsList',
-  version: 1,
-  storage,
-  whitelist: ['contacts'],
-};
+// const contactsListPersistConfig = {
+//   key: 'contactsList',
+//   version: 1,
+//   // storage,
+//   whitelist: ['contacts'],
+// };
 
 export const store = configureStore({
   reducer: {
-    contacts: persistReducer(contactsListPersistConfig, contactListReducer),
+    contacts: contactListReducer,
   },
-  middleware: getDefaultMiddleware =>
-    getDefaultMiddleware({
-      serializableCheck: {
-        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-      },
-    }),
+  //   middleware: getDefaultMiddleware =>
+  //     getDefaultMiddleware({
+  //       serializableCheck: {
+  //         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+  //       },
+  //     }),
 });
 
-export const persistor = persistStore(store);
+// export const persistor = persistStore(store);
